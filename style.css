@@ -1,0 +1,136 @@
+:root {
+  --primary-color: #4caf50;
+  --secondary-color: #333333;
+  --background-color: #121212;
+  --highlight-color: gold;
+  --error-color: red;
+  --text-color: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+label,
+select,
+input,
+button {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.dados-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.dado {
+  width: 100px;
+  height: 100px;
+  background-color: var(--secondary-color);
+  border: 4px solid var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.dado.girando {
+  transform: rotateY(720deg);
+}
+
+button {
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: var(--highlight-color);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: none;
+}
+
+select,
+input {
+  padding: 10px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  width: 100%;
+  max-width: 300px;
+}
+
+#resultado,
+#exito {
+  margin-top: 15px;
+  font-size: 1.5em;
+}
+
+#exito {
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  button,
+  select,
+  input {
+    font-size: 1em;
+    width: 100%;
+    max-width: none;
+  }
+
+  .dado {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5em;
+  }
+
+  #resultado,
+  #exito {
+    font-size: 1.2em;
+  }
+
+  body {
+    padding: 10px;
+  }
+}

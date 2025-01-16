@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lanzador de dados para juegos de rol" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lanzador de Dados</title>
+  </head>
+  <body>
+    <h1>¡Lanza los Dados!</h1>
+
+    <label for="dadoSelect">Elige el número de caras del dado:</label>
+    <select id="dadoSelect" onchange="cambiarDado()">
+      <option value="6">Dado de 6 caras</option>
+      <option value="10">Dado de 10 caras</option>
+      <option value="20" selected>Dado de 20 caras</option>
+      <option value="100">Dado de 100 caras</option>
+    </select>
+
+    <label for="cantidadDados">Cantidad de Dados (máx. 3):</label>
+    <select id="cantidadDados" onchange="cambiarCantidadDados()">
+      <option value="1">1 Dado</option>
+      <option value="2">2 Dados</option>
+      <option value="3">3 Dados</option>
+    </select>
+
+    <label for="minExito">Mínimo para Éxito:</label>
+    <input type="number" id="minExito" name="minExito" value="10" min="1" />
+
+    <button onclick="lanzarDado()">Lanzar Dados</button>
+
+    <div class="dados-container" id="dadosContainer"></div>
+    <div id="resultado"></div>
+    <div id="exito"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
